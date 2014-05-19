@@ -1,13 +1,12 @@
-
 ﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My First Blog-cxlove's blog</title>
+    <title>{{ page.title }}-cxlove's blog</title>
     <meta name="generator" content="cxlove" />
     <meta name="keywords" content="cxlove,ACM-ICPC,algorithm" />
-    
-    <meta name="author" content="">
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -15,9 +14,9 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/themes/twitter/js/code/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ ASSET_PATH }}/js/code/prettify.css" rel="stylesheet" type="text/css" media="all">
     <!-- Le fav and touch icons -->
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -121,25 +120,11 @@
                 </div>
             </div><!-- //violet-logo -->
 
-          <a class="brand" href="/">HeiNiuhaha</a><!--  -->
+          <a class="brand" href="{{ HOME_PATH }}">HeiNiuhaha</a><!-- {{ site.title }} -->
           <ul class="nav">
-            
-            
-            
-
-
-  
-    
-      
-      	
-      	<li><a href="/index.html">Index</a></li>
-      	
-      
-    
-  
-
-
-
+            {% assign pages_list = site.pages %}
+            {% assign group = 'navigation' %}
+            {% include JB/pages_list %}
           </ul>
         </div>
       </div>
@@ -148,20 +133,11 @@
     <div class="container">
 
       <div class="content">
-        <h1 id="hello-world">Hello World</h1>
-
-<pre><code>#include &lt;isotream&gt;
-using namespace std;
-int main () {
-	cout &lt;&lt; "Hello World" &lt;&lt; endl;
-	return 0;
-}
-</code></pre>
-
+        {{ content }}
       </div>
 
       <footer>
-        <p>&copy;  2012 
+        <p>&copy; {{ site.author.name }} 2012 
           with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
           and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>
@@ -172,13 +148,7 @@ int main () {
         <img src="/assets/themes/twitter/img/forkme.png" alt="Fork me on GitHub">
     </a>
 
-    <!--
-
--->
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0a2402a2f6f786cb7b8aa7466136e44e' type='text/javascript'%3E%3C/script%3E"));
-</script>
+    {% include JB/analytics %}
 
     <script type="text/javascript" src="/assets/themes/twitter/js/code/prettify.js"></script>
     <script type="text/javascript" src="/assets/themes/twitter/js/jquery-1.8.0.min.js"></script>
@@ -195,4 +165,3 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
       </script>
   </body>
 </html>
-
