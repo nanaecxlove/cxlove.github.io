@@ -1,8 +1,12 @@
-﻿---
+---
 layout: default
-title: 你好，世界
+title: Hello World
 ---
 
-<h2>{{ page.title }}</h2>
-<p>我的第一篇文章</p>
-<p>{{ page.date | date_to_string }}</p>
+#Hello World
+    #include <iostream>
+    using namespace std;
+    int main () {
+    	cout << "Hello World" << endl;
+    	return 0;
+    }
