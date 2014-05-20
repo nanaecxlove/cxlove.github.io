@@ -38,7 +38,7 @@ Jekyll是用Ruby语言编写的，所以首先要配置好Ruby环境。
 		gem install jekyll
 
 6.  这样就完成了，你可以写一个简单页面，或者fork一个，然后在进	入到相应目录，运行以下命令：
-7.  
+  
  		jekyll serve
 	然后通过浏览器访问`localhost:4000`就可以了。
 
