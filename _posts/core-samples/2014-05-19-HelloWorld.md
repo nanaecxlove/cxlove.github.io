@@ -1,7 +1,7 @@
 ---
 layout: post
-title : cxlove's First Blog in GitHub
-description : My First Blog , Hello World
+title : cxlove's First Article in GitHub Blog
+description : My First Article , Hello World
 category : informal essay
 tags : [HelloWorld]
 ---
