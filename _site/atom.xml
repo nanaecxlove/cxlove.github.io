@@ -4,7 +4,7 @@
  <title></title>
  <link href="/atom.xml" rel="self"/>
  <link href=""/>
- <updated>2014-05-20T09:30:09+08:00</updated>
+ <updated>2014-05-20T13:23:50+08:00</updated>
  <id></id>
  <author>
    <name></name>
@@ -14,12 +14,20 @@
  
  <entry>
    <title>My First Blog</title>
-   <link href="/2014/05/19/HelloWorld.html"/>
+   <link href="/informal%20essay/2014/05/19/HelloWorld.html"/>
    <updated>2014-05-19T00:00:00+08:00</updated>
-   <id>/2014/05/19/HelloWorld</id>
-   <content type="html">&lt;h1 id=&quot;hello-world&quot;&gt;Hello World&lt;/h1&gt;
+   <id>/informal%20essay/2014/05/19/HelloWorld</id>
+   <content type="html">
+&lt;h1 id=&quot;hello-world&quot;&gt;Hello World&lt;/h1&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum\lim_{i=1}^{100}{a_i}&lt;/script&gt;
+&lt;pre&gt;&lt;code&gt;#includ &amp;lt;iostream&amp;gt;
+using namespace std;
+int main () {
+	cout &amp;lt;&amp;lt; &quot;Hello World&quot; &amp;lt;&amp;lt; endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
 </content>
  </entry>
  

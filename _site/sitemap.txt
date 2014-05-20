@@ -8,4 +8,4 @@
 /sitemap.txt
 /tags.html
 
-/2014/05/19/HelloWorld.html
+/informal%20essay/2014/05/19/HelloWorld.html
