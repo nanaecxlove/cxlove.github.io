@@ -1,8 +1,19 @@
 ---
-layout: default
-title: My First Blog
+layout: post
+title : My First Blog
+description : My First Blog , Hello World
+category : lessons
+tags : [github, pages, blog, jekyll]
 ---
+{% include JB/setup %}
 
 #Hello World
 
-$$\sum\lim_{i=1}^{100}{a_i}$$
+
+    #includ <iostream>
+    using namespace std;
+    int main () {
+    	cout << "Hello World" << endl;
+    	return 0;
+    }
+
