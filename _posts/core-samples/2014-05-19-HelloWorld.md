@@ -15,6 +15,3 @@ tags : [HelloWorld]
     	cout << "Hello World" << endl;
     	return 0;
     }
-
-
-$$\sum\lim_{i=1}^{100}{a_i}$$
