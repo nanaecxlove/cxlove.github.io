@@ -2,8 +2,8 @@
 layout: post
 title : My First Blog
 description : My First Blog , Hello World
-category : lessons
-tags : [github, pages, blog, jekyll]
+category : informal essay
+tags : [Hello , First]
 ---
 {% include JB/setup %}
 
