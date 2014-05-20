@@ -10,12 +10,6 @@ tags : [HelloWorld]
 
 #Hello World
 
-$$\sum\lim_{i=1}{n}{a_i}$$
+$\sum\lim_{i=1}{n}{a_i}$
 
-    #includ <iostream>
-    using namespace std;
-    int main () {
-    	cout << "Hello World" << endl;
-    	return 0;
-    }
 

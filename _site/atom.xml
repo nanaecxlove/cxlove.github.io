@@ -4,7 +4,7 @@
  <title></title>
  <link href="/atom.xml" rel="self"/>
  <link href=""/>
- <updated>2014-05-20T16:07:49+08:00</updated>
+ <updated>2014-05-20T17:20:21+08:00</updated>
  <id></id>
  <author>
    <name></name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Jekyll 学习笔记</title>
-   <link href="/development/2014/05/20/Jekyll-study-note.html"/>
+   <link href="/development/2014/05/20/JekyllStudyNote.html"/>
    <updated>2014-05-20T00:00:00+08:00</updated>
-   <id>/development/2014/05/20/Jekyll-study-note</id>
+   <id>/development/2014/05/20/JekyllStudyNote</id>
    <content type="html">
 &lt;h1 id=&quot;windows-jekyll&quot;&gt;Windows 下配置Jekyll&lt;/h1&gt;
 &lt;p&gt;首先，很惭愧地作为一个Win狗，即使很乐意在Liunx下玩玩，但是始终还是愿意把一份工作在Win下也做一遍。&lt;/p&gt;
@@ -56,32 +56,29 @@
     &lt;pre&gt;&lt;code&gt;gem install jekyll
 &lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
-  &lt;li&gt;这样就完成了，你可以写一个简单页面，或者fork一个，然后在进	入到相应目录，运行以下命令：&lt;/li&gt;
-&lt;/ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;这样就完成了，你可以写一个简单页面，或者fork一个，然后在进	入到相应目录，运行以下命令：&lt;/p&gt;
 
- 		jekyll serve
-&lt;pre&gt;&lt;code&gt;然后通过浏览器访问`localhost:4000`就可以了。
+    &lt;pre&gt;&lt;code&gt;jekyll serve
 &lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;然后通过浏览器访问&lt;code&gt;localhost:4000&lt;/code&gt;就可以了。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;PS：很多人说直接在CMD里安装jekyll会有很多问题，但是似乎我没遇到过。不过也可以通过DevKit来安装。&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
-   <title>cxlove's First Blog in GitHub</title>
+   <title>cxlove's First Article in GitHub Blog</title>
    <link href="/informal%20essay/2014/05/19/HelloWorld.html"/>
    <updated>2014-05-19T00:00:00+08:00</updated>
    <id>/informal%20essay/2014/05/19/HelloWorld</id>
    <content type="html">
 &lt;h1 id=&quot;hello-world&quot;&gt;Hello World&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code&gt;#includ &amp;lt;iostream&amp;gt;
-using namespace std;
-int main () {
-	cout &amp;lt;&amp;lt; &quot;Hello World&quot; &amp;lt;&amp;lt; endl;
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;$\sum\lim_{i=1}{n}{a_i}$&lt;/p&gt;
 
 </content>
  </entry>
