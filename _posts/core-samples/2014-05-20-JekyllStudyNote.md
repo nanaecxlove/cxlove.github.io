@@ -9,11 +9,11 @@ tags : [Jekyll,study-note]
 
 
 #Windows 下配置Jekyll
-首先，很惭愧地作为一个Win狗，即使很乐意在Liunx下玩玩，但是始终还是愿意把一份工作在Win下也做一遍。
+　　首先，很惭愧地作为一个Win狗，即使很乐意在Liunx下玩玩，但是始终还是愿意把一份工作在Win下也做一遍。
 
-OS:Windows 7
+　　OS:Windows 7
 
-Jekyll是用Ruby语言编写的，所以首先要配置好Ruby环境。
+　　Jekyll是用Ruby语言编写的，所以首先要配置好Ruby环境。
 
 ##步骤
 1.  安装Ruby：在windows下，使用rubyinstaller。
@@ -44,4 +44,4 @@ Jekyll是用Ruby语言编写的，所以首先要配置好Ruby环境。
 
 	然后通过浏览器访问`localhost:4000`就可以了。
 
-PS：很多人说直接在CMD里安装jekyll会有很多问题，但是似乎我没遇到过。不过也可以通过DevKit来安装。
+　　PS：很多人说直接在CMD里安装jekyll会有很多问题，但是似乎我没遇到过。不过也可以通过DevKit来安装。
