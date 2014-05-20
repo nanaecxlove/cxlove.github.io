@@ -3,10 +3,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Archive-cxlove's blog</title>
+    <title>seajs模块依赖的加载处理-cxlove's blog</title>
     <meta name="generator" content="cxlove" />
     <meta name="keywords" content="cxlove,ACM-ICPC,algorithm" />
-    
+    <meta name="description" content="比如执行init.js时，init.js、jquery.plugA.js、jquery.plugB.js都会依赖到jquery，那么这种情况下seajs对jquery如何处理的呢？只执行一次？执行多次？还是其他方式？">
     <meta name="author" content="">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -140,7 +140,7 @@
     
       
       	
-      	<li class="active"><a href="/archive.html" class="active">Archive</a></li>
+      	<li><a href="/archive.html">Archive</a></li>
       	
       
     
@@ -198,311 +198,125 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>Archive </h1>
+  <h1>seajs模块依赖的加载处理 <small>Supporting tagline</small></h1>
 </div>
 
 <div class="row">
-  <div class="span12">
-    
+  <div class="span8">
+    <div class="v-entry">
+<h3 id="seajs">seajs模块依赖问题</h3>
+<p>最近在做项目的时候发现一些关于模块依赖问题，特记录下:</p>
 
+<p>比如现有3个文件：</p>
 
+<pre><code>/*init.js*/
+define(function(require, exports, module){
+	require('jquery');
+	require('jquery.plugA');
+})
 
+/*jquery.plugA.js*/
+define(function(require, exports, module){
+	require('jquery');
+	require('jquery.plugB');
+	//code...
+})
 
+/*jquery.plugB.js*/
+define(functioin(require, exports, module){
+	require('jquery');
+	//code...
+})
+</code></pre>
 
-  
-    
-    
-    
-    
-  
-    
-      <h2>2014</h2>
-      <h3>May</h3>
+<p>比如执行init.js时，init.js、jquery.plugA.js、jquery.plugB.js都会依赖到jquery，那么这种情况下seajs对jquery如何处理的呢？只执行一次？执行多次？还是其他方式？</p>
+
+<p>此处参考玉伯的回答：
+&gt;我对模块调用的理解是，调用是指获取某个模块的接口。在 SeaJS 里，只有 seajs.use, require.async, 和 require 会产生
+模块调用，比如：
+<code>var a = require('./a')</code>
+在执行 require(‘./a’) 时，会获取模块的接口，如果是第一次调用，会初始化模块 a，以后再调用时，直接返回模块 a 的接口
+define 只是注册模块信息，比如打包之后：
+<code>define(id, deps, factory)</code>
+是注册了一个模块到 seajs.cache 中，define 类似：
+<code>seajs.cache[id] = { id: id, dependencies: deps, factory: factory }</code></p>
+
+<blockquote>
+  <p>是纯注册信息。</p>
+</blockquote>
+
+<blockquote>
+  <p>而 <code>require('./a')</code> 时，才会执行 <code>seajs.cache['a'].factory</code>, 执行后得到 <code>seajs.cache['a'].exports</code></p>
+</blockquote>
+
+<blockquote>
+
+</blockquote>
+
+<h3 id="uriurl">扩展：URI与URL的区别</h3>
+<p>URI:Uniform Resource Identifiers ，统一资源标识符；</p>
+
+<p>URL:Uniform Resource Locators ，统一资源定位符；</p>
+
+<p>URN:Uniform Resource Names，统一资源名称</p>
+
+<p>URL,URN是URI的子集.</p>
+
+<h3 id="section">参考</h3>
+<ul>
+  <li>Module.STATUS的具体含义：<a href="https://github.com/seajs/seajs/issues/303">https://github.com/seajs/seajs/issues/303</a></li>
+  <li>分清 URI、URL 和 URN<a href="http://www.ibm.com/developerworks/cn/xml/x-urlni.html">http://www.ibm.com/developerworks/cn/xml/x-urlni.html</a></li>
+</ul>
+</div>
+    <hr>
+    <div class="pagination">
       <ul>
-    
-  
-    <li><span>May 19, 2014</span> &raquo; <a href="/informal%20essay/2014/05/19/HelloWorld.html">My First Blog</a></li>
-  
-    
       
-        </ul>
-        <h2>2012</h2>
-        <h3>November</h3>
-        <ul>
+        <li class="prev"><a href="/seajs/2012/08/15/seajs-jquery-plugin.html" title="【转】jQuery 模块介绍与 jQuery 插件的深度模块化">&larr; Previous</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November  7, 2012</span> &raquo; <a href="/f2e/2012/11/07/molo-f2e-standard.html">MOLO前端规范</a></li>
-  
-    
-          
-        
+        <li><a href="">Archive</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November  2, 2012</span> &raquo; <a href="/freemarker/2012/11/02/freemarker.html">FreeMarker学习笔记</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>October</h3>
-          <ul>
-        
+        <li class="next"><a href="/css/2012/09/09/css-box-model.html" title="IE盒模型与W3C盒模型浅总结">Next &rarr;</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>October 28, 2012</span> &raquo; <a href="/win8/2012/10/28/use-win8-skills.html">win8技巧知识扫盲</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>October 26, 2012</span> &raquo; <a href="/javascript/2012/10/26/javascript-essence.html">javascript高级特性学习笔记</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>September</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>September 20, 2012</span> &raquo; <a href="/javascript/2012/09/20/oop.html">javascript面向对象编程浅析</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>September  9, 2012</span> &raquo; <a href="/css/2012/09/09/css-box-model.html">IE盒模型与W3C盒模型浅总结</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>August</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 26, 2012</span> &raquo; <a href="/seajs/2012/08/26/seajs-require-theory.html">seajs模块依赖的加载处理</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 15, 2012</span> &raquo; <a href="/seajs/2012/08/15/seajs-jquery-plugin.html">【转】jQuery 模块介绍与 jQuery 插件的深度模块化</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 14, 2012</span> &raquo; <a href="/seajs/2012/08/14/seajs-combat.html">seajs实战参考</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 13, 2012</span> &raquo; <a href="/seajs/2012/08/13/seajs-cheet-sheet.html">seajs快速参考</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  9, 2012</span> &raquo; <a href="/lessons/2012/08/09/use-jekyll-build-blog.html">使用github+jekyll搭建blog环境，完美替代wordpress</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  9, 2012</span> &raquo; <a href="/lessons/2012/08/09/use-google-code-prettify.html">Use Google Code Prettify</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  7, 2012</span> &raquo; <a href="/lessons/2012/08/07/my-github-first-blog.html">My Github First Blog</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/svn/2012/08/05/svn-file-status-sense.html">svn 文件状态标记含义</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/ie/2012/08/05/just-ie6-loadjs.html">怎么让一个js文件只有是ie6的时候才加载</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/javascript/2012/08/05/ECMAScript5.html">ECMAScript5初探</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>July</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>July 30, 2012</span> &raquo; <a href="/jquery/2012/07/30/jquery-1.4.3-core-source.html">jQuery1.4.3核心源码解读</a></li>
-  
-    
       </ul>
+    </div>
+    <hr>
+    
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>26 August 2012</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="#seajs-ref">seajs <span>4</span></a></li>
+     
+    	<li><a href="#依赖-ref">依赖 <span>1</span></a></li>
+     
+    	<li><a href="#模块-ref">模块 <span>1</span></a></li>
+     
+    	<li><a href="#原理-ref">原理 <span>2</span></a></li>
+     
+    	<li><a href="#异步加载-ref">异步加载 <span>2</span></a></li>
+     
+    	<li><a href="#cache-ref">cache <span>1</span></a></li>
+     
+    	<li><a href="#接口-ref">接口 <span>1</span></a></li>
     
   
 
 
+
+    </ul>
+    
   </div>
 </div>
 

@@ -1,0 +1,560 @@
+
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FreeMarker学习笔记-cxlove's blog</title>
+    <meta name="generator" content="cxlove" />
+    <meta name="keywords" content="cxlove,ACM-ICPC,algorithm" />
+    <meta name="description" content="FreeMarker 是一款模板引擎:一种基于模板的、用来生成输出文本的通用工具。包括数组列表、模板、表达式、内建函数、文本输出等常见用法。">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/twitter/js/code/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <!-- Le fav and touch icons -->
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Update these with your own images
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+
+          <div class="violet-logo">
+                <div class="v-position-1">
+                    <div class="v-petal v-deg-0 v-color-1">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+                <div class="v-position-2">
+                    <div class="v-petal v-deg-60 v-color-2">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+                <div class="v-position-3">
+                    <div class="v-petal v-deg-120 v-color-3">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+                <div class="v-position-4">
+                    <div class="v-petal v-deg-180 v-color-4">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+                <div class="v-position-5">
+                    <div class="v-petal v-deg-240 v-color-5">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+                <div class="v-position-6">
+                    <div class="v-petal v-deg-300 v-color-6">
+                        <div class="v-petal-top">
+                        </div>
+                        <div class="v-petal-left">
+                            <div class="v-petal-left-det">
+                            </div>
+                        </div>
+                        <div class="v-petal-right">
+                            <div class="v-petal-right-det">
+                            </div>
+                        </div>
+                    </div><!-- v-petal -->
+                </div>
+            </div><!-- //violet-logo -->
+
+          <a class="brand" href="/">cxlove</a><!--  -->
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">About</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/index.html">Index</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>FreeMarker学习笔记 <small>Supporting tagline</small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <div class="v-entry">
+<h3 id="freemarkerrequestsession">1.freemarker中Request,Session的用法：</h3>
+<p>java块:</p>
+
+<pre><code>request.getSession().setAttribute("qq","http://www.qq.com");  
+request.setAttribute("qq", "http://www.qq.com");  
+</code></pre>
+
+<p>freemarker代码：  </p>
+
+<pre><code>&lt;#if Session ["qq"]?exists&gt;//Request的用法同session  
+&lt;#if Session ["qq"]=="http://www.qq.com"&gt;  
+&lt;#else&gt;  
+&lt;/#if&gt;  
+&lt;#else&gt;  
+&lt;/#if&gt;  
+</code></pre>
+
+<p>而通常情况下，Request和Session均可省去不写：  </p>
+
+<pre><code>&lt;#if qq?exists&gt;//Request的用法同session  
+	&lt;#if qq=="http://www.qq.com"&gt;  
+	&lt;#else&gt;  
+	&lt;/#if&gt;  
+&lt;#else&gt;  
+&lt;/#if&gt;   但是如果他们都设有相同的key值，那么在页面中显示的话，就就应该把他们加上去。  
+</code></pre>
+
+<h3 id="freemarker">2.freemarker获取字数</h3>
+
+<pre><code>&lt;#assign content=root.keyWord&gt;
+${content?subString(0,100)}
+</code></pre>
+
+<p>或</p>
+
+<pre><code>${root.keyWord[0..100]} 
+</code></pre>
+
+<h3 id="section">3.判断集合：</h3>
+<p>集合的集合： </p>
+
+<pre><code>&lt;#if voteWraperObj.itemList?size gt 0&gt;  
+	&lt;#list voteWraperObj.itemList as voteList&gt;  
+	&lt;/#list&gt;              
+&lt;/#if&gt;   对象的集合：  
+
+&lt;#if softDetail?size gt 0&gt;  
+	&lt;#list softDetail as softlist&gt;  
+	&lt;/#list&gt;  
+&lt;/#if&gt;   关于Session中存放的对象的属性的读取：  
+
+&lt;#if Session ["userweb"].member?exists&gt;  
+</code></pre>
+
+<p>判断数组是否存在
+&lt;#if list??&gt;</p>
+
+<h3 id="switchcase">4.switch/case的用法：</h3>
+<pre><code>&lt;#switch type&gt;  
+	&lt;#case "down"&gt;  
+		&lt;#include "softdown.ftl"&gt;  
+		&lt;#break&gt;  
+	&lt;#case "photo"&gt;  
+		&lt;#if para=="photoSquare"&gt;  
+			&lt;#include "photo.ftl"&gt;  
+		&lt;#elseif para=="photoWidth"&gt;  
+			&lt;#include "photo.ftl"&gt;  
+		&lt;#else&gt;  
+		&lt;/#if&gt;  
+	&lt;#break&gt;  
+&lt;/#switch&gt;  
+</code></pre>
+
+<h3 id="section-1">5.时间类型在页面是如何才能正常显示的：</h3>
+<p>如：</p>
+
+<pre><code>${newslist.pubTime?string('yyyy-MM-dd')}  
+${newslist.pubTime?string("yyyy-MM-dd HH:mm:ss")}   
+</code></pre>
+
+<h3 id="section-2">6.判断存在与否，以及是否有效：</h3>
+<p>如：</p>
+
+<pre><code>&lt;#if goodslist.f_goods_url?exists&amp;&amp;goodslist.f_goods_url?length gt 0&gt;  
+</code></pre>
+
+<h3 id="default">7.”default”是如何使用的：</h3>
+<p>如： </p>
+
+<pre><code>${qq?default("http://www.qq.com")}  
+//即如果属性qq不存在，那么就是要default中的值替代。  
+</code></pre>
+
+<h3 id="assign">8.<code>&lt;#assign&gt;</code>的用法：</h3>
+
+<pre><code>&lt;#assign count=0&gt;  
+&lt;#assign str="12345"&gt;  
+&lt;#list 0..9 as i&gt;  
+	&lt;#assign count=count+1&gt;   
+	&lt;#if i gt str?length&gt;  
+		${count}  
+	&lt;/#if&gt;  
+&lt;/#list&gt;   输出为：7 8 9 10  
+</code></pre>
+
+<h3 id="freemarker-1">9.freemarker中如何截取字符串</h3>
+
+<p><code>exp?substring(from, toExclusive)</code> 
+<code>exp?substring(from)</code> 
+实例：</p>
+
+<pre><code>${'abc'?substring(0)}//abc
+${'abc'?substring(0, 3)} //abc
+${'abc'?substring(2, 3)} //c
+</code></pre>
+
+<h3 id="freemarker-2">10.freemarker页面中如果包含</h3>
+<pre><code>&lt;#assign html=JspTaglibs["/WEB-INF/struts-html.tld"]&gt;  
+&lt;@html.base/&gt;   那么它所指向的路径都是相对路径(相对于当前文件)。  
+</code></pre>
+
+<h3 id="freemarkerhtml">11.如何让freemarker模板当html来使用呢：（完整的页面如下）</h3>
+<pre><code>&lt;html&gt;  
+&lt;head&gt;  
+    &lt;#assign html=JspTaglibs["/WEB-INF/struts-html.tld"]&gt;  
+    &lt;#assign bean=JspTaglibs["/WEB-INF/struts-bean.tld"]&gt;  
+    &lt;#assign logic=JspTaglibs["/WEB-INF/struts-logic.tld"]&gt;  
+    &lt;@html.base/&gt;  
+    &lt;link href="css/main.css" rel="stylesheet" type="text/css" /&gt;  
+    &lt;meta http-equiv="content-type" content="text/html; charset="utf-8"&gt;  
+ &lt;/head&gt;  
+ &lt;body&gt;  
+    ---------freemarker代码块  
+ &lt;/body&gt;  
+&lt;/html&gt;  
+</code></pre>
+
+<h3 id="int">12.使用内建的int获得整数部分</h3>
+<p>如<code>${1.1?int} = 1</code>  </p>
+
+<h3 id="section-3">13.比较操作符：</h3>
+
+<ul>
+  <li>使用=（或==，完全相等）测试两个值是否相等，使用!= 测试两个值是否不相等。  </li>
+  <li>对数字和日期可以使用&lt;、&lt;=、&gt;和&gt;=，但不能用于字符串  </li>
+  <li>由于Freemarker会将&gt;解释成FTL标记的结束字符，所以对于&gt;和&gt;=可以使用括号来避免这种情况，例如<code>&lt;#if (x &gt; y)&gt;</code>，另一种替代的方法是，使用<code>lt</code>、<code>lte</code>、<code>gt</code>和<code>gte</code>来替代&lt;、&lt;=、&gt;和&gt;=  </li>
+</ul>
+
+<h3 id="section-4">14.内建函数：</h3>
+
+<ul>
+  <li>html：对字符串进行HTML编码  </li>
+  <li>cap_first：使字符串第一个字母大写  </li>
+  <li>lower_case：将字符串转换成小写  </li>
+  <li>upper_case：将字符串转换成大写  </li>
+  <li>trim：去掉字符串前后的空白字符  </li>
+  <li>size：获得序列中元素的数目  </li>
+  <li>int：取得数字的整数部分（如-1.9?int的结果是-1）  </li>
+</ul>
+
+<h3 id="section-5">15.将表达式结果转换成文本输出</h3>
+<p>根据缺省格式（由#setting指令设置）将表达式结果转换成文本输出；可以使用内建函数string格式化单个Interpolation<br />
+如：</p>
+
+<pre><code>&lt;#setting number_format="currency"/&gt;  
+&lt;#assign answer=42/&gt;   输出结果是：$42.00   单个Interpolation：  
+
+${answer?string.number}  
+${answer?string.currency}  
+${answer?string.percent}
+</code></pre>
+
+<h3 id="section-6">16. 插入日期值：</h3>
+<p>根据缺省格式（由#setting指令设置）将表达式结果转换成文本输出；可以使用内建函数string格式化单个Interpolation<br />
+如：</p>
+
+<pre><code>${lastUpdated?string("yyyy-MM-dd HH:mm:ss zzzz")}
+</code></pre>
+
+<h3 id="session">17.Session中设置对象属性的判断：</h3>
+
+   	Session [“userweb”].member?exists
+
+<h3 id="section-7">18. 插入布尔值：</h3>
+<p>根据缺省格式（由#setting指令设置）将表达式结果转换成文本输出；可以使用内建函数string格式化单个Interpolation.<br />
+如：</p>
+
+<pre><code>&lt;#assign or=true/&gt;  
+${or?string("You are right!", "You are wrong!")}   输出为：You are right!  
+</code></pre>
+
+<h3 id="section-8">19. 格式化数字</h3>
+<p>数字Interpolation的#{expr; format}形式可以用来格式化数字，format可以是：  </p>
+
+<ul>
+  <li>mX：小数部分最小X位  </li>
+  <li>MX：小数部分最大X位  </li>
+</ul>
+
+<p>如：</p>
+
+<pre><code>&lt;#assign x=2.582/&gt;  
+&lt;#assign y=4/&gt;  
+#{x; M2}   &lt;#-- 2.58 --&gt;  
+#{y; M2}   &lt;#-- 4    --&gt;  
+#{x; m1}   &lt;#-- 2.6 --&gt;  
+#{y; m1}   &lt;#-- 4.0 --&gt;  
+#{x; m1M2} &lt;#-- 2.58 --&gt;  
+#{y; m1M2} &lt;#-- 4.0 --&gt;   
+</code></pre>
+
+<h3 id="section-9">20.用户定义指令：宏</h3>
+
+<pre><code>&lt;#macro greet person&gt;  
+&lt;font size="+2"&gt;Hello ${person}!&lt;/font&gt;  
+&lt;/#macro&gt;    作为用户定义指令使用宏变量时，使用@替代FTL标记中的#  
+
+&lt;@greet person="Fred"/&gt; and &lt;@greet person="Batman"/&gt;    输出为：Hello Fred! and Hello Batman!   
+</code></pre>
+
+<h3 id="section-10">21： 宏可以有多参数：</h3>
+<pre><code>&lt;#macro greet person color&gt;  
+	&lt;font size="+2" color="${color}"&gt;Hello ${person}!&lt;/font&gt;  
+&lt;/#macro&gt;   可以这样使用该宏变量：  
+
+&lt;@greet person="Fred" color="black"/&gt; 其中参数的次序是无关的，只能使用在macro指令中定义的参数，并且对所有参数赋值，所以下面的代码是错误的：   只能使用在macro指令中定义的参数，并且对所有参数赋值，多了或者少了都会出错的，完全赋值。 如：`&lt;@greet person="Fred"/&gt;`为错。  
+</code></pre>
+
+<p>可以在定义参数时指定缺省值，</p>
+
+<pre><code>&lt;#macro greet person color="black"&gt;  
+	&lt;font size="+2" color="${color}"&gt;Hello ${person}!&lt;/font&gt;  
+&lt;/#macro&gt;    这样`&lt;@greet person="Fred"/&gt;`就正确了，宏的参数是局部变量，只能在宏定义中有效。  
+</code></pre>
+
+<h3 id="section-11">22. 嵌套内容</h3>
+<p>用户定义指令可以有嵌套内容，使用&lt;#nested&gt;指令执行指令开始和结束标记之间的模板片  </p>
+
+<pre><code>&lt;#macro border&gt;  
+	&lt;table border=4 cellspacing=0 cellpadding=4&gt;
+		&lt;tr&gt;&lt;td&gt;&lt;#nested&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;/table&gt;  
+&lt;/#macro&gt;    这样使用该宏变量：  
+  
+&lt;@border&gt;The bordered text&lt;/@border&gt;   输出结果：  
+
+&lt;table border=4 cellspacing=0 cellpadding=4&gt;
+	&lt;tr&gt;&lt;td&gt;The bordered text&lt;/tr&gt;&lt;/td&gt;
+&lt;/table&gt;  
+</code></pre>
+
+<h3 id="list">23. list循环中索引值</h3>
+
+<ul>
+  <li>item_index:这是一个包含当前项在循环中的步进索引的数值。</li>
+  <li>item_has_next:来辨别当前项是否是序列的最后一项的布尔值。</li>
+</ul>
+
+<p>code：</p>
+
+<pre><code>&lt;#assign seq = ["winter", "spring", "summer", "autumn"]&gt; 
+&lt;#list seq as x&gt;
+	${x_index + 1}. ${x}&lt;#if x_has_next&gt;,&lt;/#if&gt; 
+&lt;/#list&gt;
+</code></pre>
+
+<p>输出结果：</p>
+
+<pre><code>1. winter, 2. spring, 3. summer, 4. autumn
+</code></pre>
+</div>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/win8/2012/10/28/use-win8-skills.html" title="win8技巧知识扫盲">&larr; Previous</a></li>
+      
+        <li><a href="">Archive</a></li>
+      
+        <li class="next"><a href="/f2e/2012/11/07/molo-f2e-standard.html" title="MOLO前端规范">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>02 November 2012</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="#FreeMarker-ref">FreeMarker <span>1</span></a></li>
+     
+    	<li><a href="#ftl-ref">ftl <span>1</span></a></li>
+     
+    	<li><a href="#模板-ref">模板 <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy;  2014 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+    <a class="v-fork-me" href="https://github.com/cxlove/cxlove.github.io" target="_blank" rel="nofollow">
+        <img src="/assets/themes/twitter/img/forkme.png" alt="Fork me on GitHub">
+    </a>
+
+    <!--
+
+-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0a2402a2f6f786cb7b8aa7466136e44e' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+    <script type="text/javascript" src="/assets/themes/twitter/js/code/prettify.js"></script>
+    <script type="text/javascript" src="/assets/themes/twitter/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+          $("pre").addClass("prettyprint");//linenums 数字
+          prettyPrint();
+          $('.v-entry a').each(function(){
+            if($(this).attr("href").indexOf("cxlove") == -1){
+              $(this).attr("target", "_blank");
+            }
+          })
+        });
+      </script>
+  </body>
+</html>
+

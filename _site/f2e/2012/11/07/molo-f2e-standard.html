@@ -3,10 +3,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Archive-cxlove's blog</title>
+    <title>MOLO前端规范-cxlove's blog</title>
     <meta name="generator" content="cxlove" />
     <meta name="keywords" content="cxlove,ACM-ICPC,algorithm" />
-    
+    <meta name="description" content="正在制定一套MOLO前端规范，包括命名规范、注释规范、公共组件开发规范、HTML规范、CSS规范、JS规范">
     <meta name="author" content="">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -140,7 +140,7 @@
     
       
       	
-      	<li class="active"><a href="/archive.html" class="active">Archive</a></li>
+      	<li><a href="/archive.html">Archive</a></li>
       	
       
     
@@ -198,311 +198,100 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>Archive </h1>
+  <h1>MOLO前端规范 <small>Supporting tagline</small></h1>
 </div>
 
 <div class="row">
-  <div class="span12">
-    
+  <div class="span8">
+    <div class="v-entry">
+<h3 id="molo">molo前端规范</h3>
 
+<h4 id="section">一、命名规范：</h4>
 
+<ul>
+  <li>公共组件因高度重用，命名从简，不要加前缀</li>
+  <li>各页面class和id采用驼峰命名法，有JS关联的dom对象采用“J_SubjectPagin”此格式书写，防止页面改版等更新需求时误删js钩子。</li>
+  <li>频道下的页面命名清晰，不怕命名长，怕命名冲突。命名长，css选择时可尽量不使用子选择符，确保css优先级权重足够低。方便扩展时覆盖操作。</li>
+  <li>命名有意义，尽量采用英文。</li>
+</ul>
 
+<h4 id="section-1">二、注释规范</h4>
 
+<ul>
+  <li>
+    <p>公共组件需要在文件头部加上注释说明：</p>
 
-  
-    
-    
-    
-    
-  
-    
-      <h2>2014</h2>
-      <h3>May</h3>
+    <pre><code>  /**
+  * usage：
+  * author：
+  * email：
+  * date：	
+  **/
+</code></pre>
+  </li>
+  <li>
+    <p>大模块注释，用==分隔开：</p>
+
+    <pre><code>  //===================
+  //代码用途
+  //===================
+</code></pre>
+  </li>
+  <li>
+    <p>小功能注释，单独占一行，不要在代码后的同一行内加注释：</p>
+
+    <pre><code>  //代码用途
+  var name = "abc";
+</code></pre>
+  </li>
+</ul>
+
+<h4 id="section-2">公共组件开发规范</h4>
+
+<h4 id="html">HTML规范</h4>
+
+<h4 id="css">CSS规范</h4>
+
+<h4 id="js">JS规范</h4>
+
+</div>
+    <hr>
+    <div class="pagination">
       <ul>
-    
-  
-    <li><span>May 19, 2014</span> &raquo; <a href="/informal%20essay/2014/05/19/HelloWorld.html">My First Blog</a></li>
-  
-    
       
-        </ul>
-        <h2>2012</h2>
-        <h3>November</h3>
-        <ul>
+        <li class="prev"><a href="/freemarker/2012/11/02/freemarker.html" title="FreeMarker学习笔记">&larr; Previous</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November  7, 2012</span> &raquo; <a href="/f2e/2012/11/07/molo-f2e-standard.html">MOLO前端规范</a></li>
-  
-    
-          
-        
+        <li><a href="">Archive</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November  2, 2012</span> &raquo; <a href="/freemarker/2012/11/02/freemarker.html">FreeMarker学习笔记</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>October</h3>
-          <ul>
-        
+        <li class="next"><a href="/informal%20essay/2014/05/19/HelloWorld.html" title="My First Blog">Next &rarr;</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>October 28, 2012</span> &raquo; <a href="/win8/2012/10/28/use-win8-skills.html">win8技巧知识扫盲</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>October 26, 2012</span> &raquo; <a href="/javascript/2012/10/26/javascript-essence.html">javascript高级特性学习笔记</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>September</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>September 20, 2012</span> &raquo; <a href="/javascript/2012/09/20/oop.html">javascript面向对象编程浅析</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>September  9, 2012</span> &raquo; <a href="/css/2012/09/09/css-box-model.html">IE盒模型与W3C盒模型浅总结</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>August</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 26, 2012</span> &raquo; <a href="/seajs/2012/08/26/seajs-require-theory.html">seajs模块依赖的加载处理</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 15, 2012</span> &raquo; <a href="/seajs/2012/08/15/seajs-jquery-plugin.html">【转】jQuery 模块介绍与 jQuery 插件的深度模块化</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 14, 2012</span> &raquo; <a href="/seajs/2012/08/14/seajs-combat.html">seajs实战参考</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 13, 2012</span> &raquo; <a href="/seajs/2012/08/13/seajs-cheet-sheet.html">seajs快速参考</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  9, 2012</span> &raquo; <a href="/lessons/2012/08/09/use-jekyll-build-blog.html">使用github+jekyll搭建blog环境，完美替代wordpress</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  9, 2012</span> &raquo; <a href="/lessons/2012/08/09/use-google-code-prettify.html">Use Google Code Prettify</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  7, 2012</span> &raquo; <a href="/lessons/2012/08/07/my-github-first-blog.html">My Github First Blog</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/svn/2012/08/05/svn-file-status-sense.html">svn 文件状态标记含义</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/ie/2012/08/05/just-ie6-loadjs.html">怎么让一个js文件只有是ie6的时候才加载</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/javascript/2012/08/05/ECMAScript5.html">ECMAScript5初探</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>July</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>July 30, 2012</span> &raquo; <a href="/jquery/2012/07/30/jquery-1.4.3-core-source.html">jQuery1.4.3核心源码解读</a></li>
-  
-    
       </ul>
+    </div>
+    <hr>
+    
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>07 November 2012</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="#前端规范-ref">前端规范 <span>1</span></a></li>
     
   
 
 
+
+    </ul>
+    
   </div>
 </div>
 

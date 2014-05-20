@@ -3,10 +3,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Archive-cxlove's blog</title>
+    <title>使用github+jekyll搭建blog环境，完美替代wordpress-cxlove's blog</title>
     <meta name="generator" content="cxlove" />
     <meta name="keywords" content="cxlove,ACM-ICPC,algorithm" />
-    
+    <meta name="description" content="讲讲怎么使用github pages做blog环境,给自己做个记录，也给大家提供教程，分享交流">
     <meta name="author" content="">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -140,7 +140,7 @@
     
       
       	
-      	<li class="active"><a href="/archive.html" class="active">Archive</a></li>
+      	<li><a href="/archive.html">Archive</a></li>
       	
       
     
@@ -198,311 +198,151 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>Archive </h1>
+  <h1>使用github+jekyll搭建blog环境，完美替代wordpress <small>Supporting tagline</small></h1>
 </div>
 
 <div class="row">
-  <div class="span12">
-    
+  <div class="span8">
+    <div class="v-entry">
+<p>也来讲讲怎么使用github pages做blog环境</p>
 
+<h2 id="section">优点</h2>
 
+<blockquote>
+  <p>空间免费，github托管，稳定又安全，遭遇过空间商跑路的朋友是不是想起伤心往事；</p>
+</blockquote>
 
+<blockquote>
+  <p>允许本地服务器调试，脱离网络写文章毫无压力，因为可以使用git命令同步来管理文章，版本控制妥妥的，对技术人员来说，一键恢复，实在是神物；</p>
+</blockquote>
 
+<blockquote>
+  <p>还能绑定顶级域名，亲，人家免费空间竟然还允许我们绑域名有木有~~；</p>
+</blockquote>
 
-  
-    
-    
-    
-    
-  
-    
-      <h2>2014</h2>
-      <h3>May</h3>
+<blockquote>
+  <p>文章用markedown编写，以前遭受排版困扰的亲们是不是很激动；</p>
+</blockquote>
+
+<h2 id="section-1">购买域名</h2>
+<p>可以去<a href="http://www.net.cn">万网</a>，这两天正好在促销.
+<img src="/assets/themes/twitter/pic/net-cn-sales.png" alt="net-cn-sales" /></p>
+
+<h2 id="dnspod">用免费的dnsPod做域名解析</h2>
+<p>dnspod链接地址<a href="https://www.dnspod.cn/">https://www.dnspod.cn/</a>
+<img src="/assets/themes/twitter/pic/dnspod-setting.png" alt="dnspod settings" /></p>
+
+<h2 id="githubjekyll">github注册和本地电脑jekyll等环境配置</h2>
+<p>参考最底下的参考文章，省略。。。</p>
+
+<h2 id="section-2">命令</h2>
+
+<ol>
+  <li>
+    <h3 id="git">git命令获取远程文件</h3>
+
+    <pre><code>git clone git@github.com:heiniuhaha/heiniuhaha.github.com.git
+</code></pre>
+  </li>
+  <li>
+    <h3 id="heiniugithubcom">定位到目录<code>heiniu.github.com</code></h3>
+
+    <pre><code>cd .ssh/heiniuhaha.github.com
+</code></pre>
+  </li>
+  <li>
+    <h3 id="rake">使用<code>rake</code>命令</h3>
+
+    <pre><code>rake page           # Create a new page.
+rake post           # Begin a new post in ./_posts
+rake preview        # Launch preview environment
+</code></pre>
+  </li>
+  <li>
+    <h3 id="markdownhttpsgithubcomothreemarkdown-syntax-zhtwblobmasterbasicsmd">写文章的时候学习下<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/basics.md">markdown语法</a></h3>
+    <p>如:中文单引号 ` 用来标注小块代码,如<code>github</code> <code>jekyll</code></p>
+  </li>
+  <li>
+    <h3 id="git-1">最后提交git代码</h3>
+    <pre><code> git add .
+ git commit . -m 'just another commit'
+</code></pre>
+  </li>
+</ol>
+
+<h2 id="section-3">日常发布完整命令</h2>
+<pre><code>git clone git@github.com:heiniuhaha/heiniuhaha.github.com.git//本地如果无远程代码，先做这步，不然就忽略
+cd .ssh/heiniuhaha.github.com//定位到你blog的目录下
+git pull origin master //先同步远程文件，后面的参数会自动连接你远程的文件
+git status //查看本地自己修改了多少文件
+git add .//添加远程不存在的git文件
+git commit * -m "what I want told to someone"
+git push origin master //更新到远程服务器上
+</code></pre>
+
+<h2 id="section-4">参考文章</h2>
+<ul>
+  <li>
+    <p><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html">搭建一个免费的，无限流量的Blog—-github Pages和Jekyll入门</a> 阮一峰写于2012-08-25 【推荐】</p>
+  </li>
+  <li>
+    <p><a href="http://beiyuu.com/github-pages/">使用Github Pages建独立博客</a></p>
+  </li>
+  <li>
+    <p><a href="http://blog.leezhong.com/tech/2010/08/25/make-github-as-blog-engine.html">使用github作为博客引擎</a></p>
+  </li>
+  <li>
+    <p><a href="http://jekyllbootstrap.com/">The Quickest Way to Blog with Jekyll.</a></p>
+  </li>
+</ul>
+
+<h2 id="git-api-">附件：git api 总结图</h2>
+<p>链接：<a href="/assets/themes/twitter/pic/git-api.png">http://www.heiniuhaha.com/assets/themes/twitter/pic/git-api.png</a>
+<img src="/assets/themes/twitter/pic/git-api.png" alt="git api 总结图" /></p>
+</div>
+    <hr>
+    <div class="pagination">
       <ul>
-    
-  
-    <li><span>May 19, 2014</span> &raquo; <a href="/informal%20essay/2014/05/19/HelloWorld.html">My First Blog</a></li>
-  
-    
       
-        </ul>
-        <h2>2012</h2>
-        <h3>November</h3>
-        <ul>
+        <li class="prev"><a href="/lessons/2012/08/09/use-google-code-prettify.html" title="Use Google Code Prettify">&larr; Previous</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November  7, 2012</span> &raquo; <a href="/f2e/2012/11/07/molo-f2e-standard.html">MOLO前端规范</a></li>
-  
-    
-          
-        
+        <li><a href="">Archive</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November  2, 2012</span> &raquo; <a href="/freemarker/2012/11/02/freemarker.html">FreeMarker学习笔记</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>October</h3>
-          <ul>
-        
+        <li class="next"><a href="/seajs/2012/08/13/seajs-cheet-sheet.html" title="seajs快速参考">Next &rarr;</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>October 28, 2012</span> &raquo; <a href="/win8/2012/10/28/use-win8-skills.html">win8技巧知识扫盲</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>October 26, 2012</span> &raquo; <a href="/javascript/2012/10/26/javascript-essence.html">javascript高级特性学习笔记</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>September</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>September 20, 2012</span> &raquo; <a href="/javascript/2012/09/20/oop.html">javascript面向对象编程浅析</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>September  9, 2012</span> &raquo; <a href="/css/2012/09/09/css-box-model.html">IE盒模型与W3C盒模型浅总结</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>August</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 26, 2012</span> &raquo; <a href="/seajs/2012/08/26/seajs-require-theory.html">seajs模块依赖的加载处理</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 15, 2012</span> &raquo; <a href="/seajs/2012/08/15/seajs-jquery-plugin.html">【转】jQuery 模块介绍与 jQuery 插件的深度模块化</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 14, 2012</span> &raquo; <a href="/seajs/2012/08/14/seajs-combat.html">seajs实战参考</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 13, 2012</span> &raquo; <a href="/seajs/2012/08/13/seajs-cheet-sheet.html">seajs快速参考</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  9, 2012</span> &raquo; <a href="/lessons/2012/08/09/use-jekyll-build-blog.html">使用github+jekyll搭建blog环境，完美替代wordpress</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  9, 2012</span> &raquo; <a href="/lessons/2012/08/09/use-google-code-prettify.html">Use Google Code Prettify</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  7, 2012</span> &raquo; <a href="/lessons/2012/08/07/my-github-first-blog.html">My Github First Blog</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/svn/2012/08/05/svn-file-status-sense.html">svn 文件状态标记含义</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/ie/2012/08/05/just-ie6-loadjs.html">怎么让一个js文件只有是ie6的时候才加载</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/javascript/2012/08/05/ECMAScript5.html">ECMAScript5初探</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>July</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>July 30, 2012</span> &raquo; <a href="/jquery/2012/07/30/jquery-1.4.3-core-source.html">jQuery1.4.3核心源码解读</a></li>
-  
-    
       </ul>
+    </div>
+    <hr>
+    
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>09 August 2012</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="#github-ref">github <span>2</span></a></li>
+     
+    	<li><a href="#pages-ref">pages <span>2</span></a></li>
+     
+    	<li><a href="#blog-ref">blog <span>2</span></a></li>
+     
+    	<li><a href="#jekyll-ref">jekyll <span>3</span></a></li>
     
   
 
 
+
+    </ul>
+    
   </div>
 </div>
 

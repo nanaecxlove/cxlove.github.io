@@ -3,10 +3,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Archive-cxlove's blog</title>
+    <title>IE盒模型与W3C盒模型浅总结-cxlove's blog</title>
     <meta name="generator" content="cxlove" />
     <meta name="keywords" content="cxlove,ACM-ICPC,algorithm" />
-    
+    <meta name="description" content="前端就是需要温故而知新，好好整理下前端基础知识，此偏讲讲IE盒模型和W3C标准盒模型差异，巩固下基础知识。同时总结下border区域是否会填充背景色。">
     <meta name="author" content="">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -140,7 +140,7 @@
     
       
       	
-      	<li class="active"><a href="/archive.html" class="active">Archive</a></li>
+      	<li><a href="/archive.html">Archive</a></li>
       	
       
     
@@ -198,311 +198,182 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>Archive </h1>
+  <h1>IE盒模型与W3C盒模型浅总结 <small>Supporting tagline</small></h1>
 </div>
 
 <div class="row">
-  <div class="span12">
-    
+  <div class="span8">
+    <div class="v-entry">
+<p>css:层叠样式表（Cascading Style Sheets）</p>
 
+<h3 id="demo">demo：</h3>
 
+<ul>
+  <li>
+    <p><a href="http://www.heiniuhaha.com/demo/css-box-model/css-box-model-W3C.html">http://www.heiniuhaha.com/demo/css-box-model/css-box-model-W3C.html</a> 声明doctype</p>
+  </li>
+  <li>
+    <p><a href="http://www.heiniuhaha.com/demo/css-box-model/css-box-model-IE.html">http://www.heiniuhaha.com/demo/css-box-model/css-box-model-IE.html</a> 不声明doctype</p>
+  </li>
+</ul>
 
+<p>code ：</p>
 
+<pre><code>&lt;style&gt; 
+	div{
+		background-color:red;
+		width:300px;
+		height:300px;
+		padding:20px;
+		margin:100px;
+		border:10px solid #000;
+	}
+	/*ie6不支持透明transparent*/
+	.box2{border-color:transparent}
+&lt;/style&gt;
 
-  
-    
-    
-    
-    
-  
-    
-      <h2>2014</h2>
-      <h3>May</h3>
+&lt;div&gt;&lt;/div&gt;
+&lt;div class="box2"&gt;&lt;/div&gt;
+</code></pre>
+
+<p>chrome测试图：</p>
+
+<p><img src="http://www.heiniuhaha.com/demo/css-box-model/css-box-model-chrome.png" alt="chrome测试图" /></p>
+
+<p>IE6测试图-IE盒模型和W3C标准盒模型对比图：</p>
+
+<p><img src="http://www.heiniuhaha.com/demo/css-box-model/box-ie6.png" alt="IE6测试图-标准和非标准" /></p>
+
+<h3 id="section">盒模型示意图</h3>
+<ul>
+  <li>
+    <h4 id="ie">IE盒模型</h4>
+  </li>
+</ul>
+
+<p><img src="http://www.heiniuhaha.com/demo/css-box-model/p2.gif" alt="IE盒模型" /></p>
+
+<ul>
+  <li>
+    <h4 id="w3c">W3C标准盒模型</h4>
+  </li>
+</ul>
+
+<p><img src="http://www.heiniuhaha.com/demo/css-box-model/p3.gif" alt="W3C标准盒模型" /></p>
+
+<h3 id="section-1">总结：</h3>
+
+<p>IE盒模型占总空间=contentWidth，内容区只占了一小部分空间；</p>
+
+<p>w3c标准盒模型占总空间=contentWidth+padding+margin+border；</p>
+
+<p>同时：div的背景颜色充满了padding和border区域，border透明时，可发现背景颜色就是div的bgcolor.（ie6不支持透明transparent）</p>
+
+<h3 id="section-2">触发盒模型</h3>
+<p>IE6 IE7 IE8 IE9 在Quirks怪异模式下，盒模型是一模一样的，都是IE盒模型，即总width=width;</p>
+
+<p>IE6 IE7 IE8 IE9 在标准模式下，盒模型也是一模一样的，都是W3C盒模型， 即总width=width+padding+border;</p>
+
+<p>非IE下的浏览器，如FF、chrome都采用标准模式渲染，都是W3C盒模型， 即总width=width+padding+border;</p>
+
+<h3 id="border">border区域是否填充背景色</h3>
+<p>border区域不填充背景色图</p>
+
+<p><img src="http://www.heiniuhaha.com/demo/css-box-model/border-transparent-ie7.png" alt="border区域不填充背景色" /></p>
+
+<p>border区域填充背景色图</p>
+
+<p><img src="http://www.heiniuhaha.com/demo/css-box-model/border-transparent-ie8.png" alt="border区域填充背景色" /></p>
+
+<h4 id="section-3">标准模式下</h4>
+<ul>
+  <li>
+    <p>非IE浏览器下，div的背景颜色充满了padding和border。border透明时，可发现border区域填充了背景色。</p>
+  </li>
+  <li>
+    <p>IE8和IE9在标准模式下，和非IE浏览器渲染一致，border区域填充背景色；</p>
+  </li>
+  <li>
+    <p>IE6 IE7标准模式下，border区域不填充背景色；</p>
+  </li>
+</ul>
+
+<h4 id="section-4">非标准模式下</h4>
+<ul>
+  <li>IE6 IE7 IE8 IE9在Quirks怪异模式下，border区域都不会填充背景色；</li>
+</ul>
+
+<h3 id="section-5">备注：</h3>
+
+<ul>
+  <li>
+    <p>&lt;!DOCTYPE&gt; is not an HTML tag. It is an information (a declaration) to the browser about what version the HTML is written in. 声明帮助浏览器正确地显示网页。</p>
+  </li>
+  <li>
+    <p>HTML规定了三种文档类型：Strict、Transitional 以及 Frameset。</p>
+  </li>
+  <li>
+    <p>在没有声明doctype的情况下，浏览器选择自己的模式，怪异模式(QUICK MODE)</p>
+  </li>
+</ul>
+
+<h3 id="section-6">参考</h3>
+<ul>
+  <li><a href="http://www.w3schools.com/css/css_boxmodel.asp">w3schools.com css box model</a></li>
+  <li><a href="http://blog.csdn.net/ncode/article/details/7428746">IE6与W3C标准的盒模型差异</a></li>
+</ul>
+</div>
+    <hr>
+    <div class="pagination">
       <ul>
-    
-  
-    <li><span>May 19, 2014</span> &raquo; <a href="/informal%20essay/2014/05/19/HelloWorld.html">My First Blog</a></li>
-  
-    
       
-        </ul>
-        <h2>2012</h2>
-        <h3>November</h3>
-        <ul>
+        <li class="prev"><a href="/seajs/2012/08/26/seajs-require-theory.html" title="seajs模块依赖的加载处理">&larr; Previous</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November  7, 2012</span> &raquo; <a href="/f2e/2012/11/07/molo-f2e-standard.html">MOLO前端规范</a></li>
-  
-    
-          
-        
+        <li><a href="">Archive</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November  2, 2012</span> &raquo; <a href="/freemarker/2012/11/02/freemarker.html">FreeMarker学习笔记</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>October</h3>
-          <ul>
-        
+        <li class="next"><a href="/javascript/2012/09/20/oop.html" title="javascript面向对象编程浅析">Next &rarr;</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>October 28, 2012</span> &raquo; <a href="/win8/2012/10/28/use-win8-skills.html">win8技巧知识扫盲</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>October 26, 2012</span> &raquo; <a href="/javascript/2012/10/26/javascript-essence.html">javascript高级特性学习笔记</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>September</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>September 20, 2012</span> &raquo; <a href="/javascript/2012/09/20/oop.html">javascript面向对象编程浅析</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>September  9, 2012</span> &raquo; <a href="/css/2012/09/09/css-box-model.html">IE盒模型与W3C盒模型浅总结</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>August</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 26, 2012</span> &raquo; <a href="/seajs/2012/08/26/seajs-require-theory.html">seajs模块依赖的加载处理</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 15, 2012</span> &raquo; <a href="/seajs/2012/08/15/seajs-jquery-plugin.html">【转】jQuery 模块介绍与 jQuery 插件的深度模块化</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 14, 2012</span> &raquo; <a href="/seajs/2012/08/14/seajs-combat.html">seajs实战参考</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 13, 2012</span> &raquo; <a href="/seajs/2012/08/13/seajs-cheet-sheet.html">seajs快速参考</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  9, 2012</span> &raquo; <a href="/lessons/2012/08/09/use-jekyll-build-blog.html">使用github+jekyll搭建blog环境，完美替代wordpress</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  9, 2012</span> &raquo; <a href="/lessons/2012/08/09/use-google-code-prettify.html">Use Google Code Prettify</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  7, 2012</span> &raquo; <a href="/lessons/2012/08/07/my-github-first-blog.html">My Github First Blog</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/svn/2012/08/05/svn-file-status-sense.html">svn 文件状态标记含义</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/ie/2012/08/05/just-ie6-loadjs.html">怎么让一个js文件只有是ie6的时候才加载</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/javascript/2012/08/05/ECMAScript5.html">ECMAScript5初探</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>July</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>July 30, 2012</span> &raquo; <a href="/jquery/2012/07/30/jquery-1.4.3-core-source.html">jQuery1.4.3核心源码解读</a></li>
-  
-    
       </ul>
+    </div>
+    <hr>
+    
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>09 September 2012</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="#css-ref">css <span>1</span></a></li>
+     
+    	<li><a href="#盒模型-ref">盒模型 <span>1</span></a></li>
+     
+    	<li><a href="#IE-ref">IE <span>1</span></a></li>
+     
+    	<li><a href="#W3C-ref">W3C <span>1</span></a></li>
+     
+    	<li><a href="#DOCTYPE-ref">DOCTYPE <span>1</span></a></li>
+     
+    	<li><a href="#border-ref">border <span>1</span></a></li>
+     
+    	<li><a href="#backgroundColor-ref">backgroundColor <span>1</span></a></li>
+     
+    	<li><a href="#Quirks-ref">Quirks <span>1</span></a></li>
     
   
 
 
+
+    </ul>
+    
   </div>
 </div>
 

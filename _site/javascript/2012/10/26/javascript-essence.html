@@ -3,10 +3,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Archive-cxlove's blog</title>
+    <title>javascript高级特性学习笔记-cxlove's blog</title>
     <meta name="generator" content="cxlove" />
     <meta name="keywords" content="cxlove,ACM-ICPC,algorithm" />
-    
+    <meta name="description" content="javascript的面向对象、函数式编程、闭包、动态绑定、作用域等基础知识。">
     <meta name="author" content="">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -140,7 +140,7 @@
     
       
       	
-      	<li class="active"><a href="/archive.html" class="active">Archive</a></li>
+      	<li><a href="/archive.html">Archive</a></li>
       	
       
     
@@ -198,311 +198,132 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>Archive </h1>
+  <h1>javascript高级特性学习笔记 <small>Supporting tagline</small></h1>
 </div>
 
 <div class="row">
-  <div class="span12">
-    
+  <div class="span8">
+    <div class="v-entry">
+<h2 id="javascript">javascript高级特性学习笔记</h2>
 
+<h3 id="section">编程理念:</h3>
+<p>面向对象、函数式编程、闭包、动态绑定、作用域</p>
 
+<h4 id="section-1">1、作用域</h4>
+<p><strong>概念：</strong>
+命名冲突、函数作用域</p>
 
+<p><strong>搜索顺序：</strong>
+局域作用域-&gt;上层作用域-&gt;全局作用域</p>
 
+<p><strong>全局对象：</strong></p>
 
-  
-    
-    
-    
-    
-  
-    
-      <h2>2014</h2>
-      <h3>May</h3>
+<ul>
+  <li>在Node.js对应的是global对象</li>
+  <li>在浏览器中对应的是window对象</li>
+</ul>
+
+<p><strong>全局作用域：</strong></p>
+
+<ul>
+  <li>最外层定义的变量，如 <code>var global;</code></li>
+  <li>全局对象的属性，如<code>$.util.pagin</code></li>
+  <li>任何地方隐式定义的变量（未定义直接赋值），如<code>global="aaa"</code></li>
+</ul>
+
+<h3 id="section-2">2、闭包</h3>
+<p><strong>定义：</strong></p>
+
+<p>当一个函数返回它内部定义的一个函数时，就产生了一个闭包。</p>
+
+<p><strong>code：</strong></p>
+
+<pre><code>var generateClosure = function(){
+	var count = 0;
+	var get = function(){
+		count ++;
+		return count;
+	};
+	return get;
+};
+var counter1 = generateClosure();
+var counter2 = generateClosure();
+
+console.log(counter1());//1
+console.log(counter2());//1
+console.log(counter1());//2
+console.log(counter1());//3
+console.log(counter2());//2 **结论：**
+</code></pre>
+
+<p>调用函数时，生成两个闭包实例，在内存中生成了相互独立的副本，它们内部引用的count变量分别属于各自的运行环境。</p>
+
+<p><strong>用途：</strong></p>
+
+<ul>
+  <li>嵌套的回调函数</li>
+  <li>实现js对象私有成员，防止被外部调用时修改破坏，按非正式约定需加下划线前缀。此处模拟方式：把一个对象用闭包封装起来，只返回一个“访问器”的对象，即可实现对细节隐藏。	</li>
+</ul>
+
+<h3 id="section-3">3、对象</h3>
+
+<h3 id="section-4">什么是前端，前端的意义</h3>
+</div>
+    <hr>
+    <div class="pagination">
       <ul>
-    
-  
-    <li><span>May 19, 2014</span> &raquo; <a href="/informal%20essay/2014/05/19/HelloWorld.html">My First Blog</a></li>
-  
-    
       
-        </ul>
-        <h2>2012</h2>
-        <h3>November</h3>
-        <ul>
+        <li class="prev"><a href="/javascript/2012/09/20/oop.html" title="javascript面向对象编程浅析">&larr; Previous</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November  7, 2012</span> &raquo; <a href="/f2e/2012/11/07/molo-f2e-standard.html">MOLO前端规范</a></li>
-  
-    
-          
-        
+        <li><a href="">Archive</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November  2, 2012</span> &raquo; <a href="/freemarker/2012/11/02/freemarker.html">FreeMarker学习笔记</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>October</h3>
-          <ul>
-        
+        <li class="next"><a href="/win8/2012/10/28/use-win8-skills.html" title="win8技巧知识扫盲">Next &rarr;</a></li>
       
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>October 28, 2012</span> &raquo; <a href="/win8/2012/10/28/use-win8-skills.html">win8技巧知识扫盲</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>October 26, 2012</span> &raquo; <a href="/javascript/2012/10/26/javascript-essence.html">javascript高级特性学习笔记</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>September</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>September 20, 2012</span> &raquo; <a href="/javascript/2012/09/20/oop.html">javascript面向对象编程浅析</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>September  9, 2012</span> &raquo; <a href="/css/2012/09/09/css-box-model.html">IE盒模型与W3C盒模型浅总结</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>August</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 26, 2012</span> &raquo; <a href="/seajs/2012/08/26/seajs-require-theory.html">seajs模块依赖的加载处理</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 15, 2012</span> &raquo; <a href="/seajs/2012/08/15/seajs-jquery-plugin.html">【转】jQuery 模块介绍与 jQuery 插件的深度模块化</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 14, 2012</span> &raquo; <a href="/seajs/2012/08/14/seajs-combat.html">seajs实战参考</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August 13, 2012</span> &raquo; <a href="/seajs/2012/08/13/seajs-cheet-sheet.html">seajs快速参考</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  9, 2012</span> &raquo; <a href="/lessons/2012/08/09/use-jekyll-build-blog.html">使用github+jekyll搭建blog环境，完美替代wordpress</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  9, 2012</span> &raquo; <a href="/lessons/2012/08/09/use-google-code-prettify.html">Use Google Code Prettify</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  7, 2012</span> &raquo; <a href="/lessons/2012/08/07/my-github-first-blog.html">My Github First Blog</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/svn/2012/08/05/svn-file-status-sense.html">svn 文件状态标记含义</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/ie/2012/08/05/just-ie6-loadjs.html">怎么让一个js文件只有是ie6的时候才加载</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>August  5, 2012</span> &raquo; <a href="/javascript/2012/08/05/ECMAScript5.html">ECMAScript5初探</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>July</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>July 30, 2012</span> &raquo; <a href="/jquery/2012/07/30/jquery-1.4.3-core-source.html">jQuery1.4.3核心源码解读</a></li>
-  
-    
       </ul>
+    </div>
+    <hr>
+    
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>26 October 2012</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="#javascript-ref">javascript <span>3</span></a></li>
+     
+    	<li><a href="#oop-ref">oop <span>3</span></a></li>
+     
+    	<li><a href="#prototype-ref">prototype <span>2</span></a></li>
+     
+    	<li><a href="#继承-ref">继承 <span>2</span></a></li>
+     
+    	<li><a href="#封装-ref">封装 <span>2</span></a></li>
+     
+    	<li><a href="#对象-ref">对象 <span>2</span></a></li>
+     
+    	<li><a href="#函数-ref">函数 <span>2</span></a></li>
+     
+    	<li><a href="#原型-ref">原型 <span>2</span></a></li>
+     
+    	<li><a href="#作用域-ref">作用域 <span>1</span></a></li>
+     
+    	<li><a href="#闭包-ref">闭包 <span>1</span></a></li>
     
   
 
 
+
+    </ul>
+    
   </div>
 </div>
 
