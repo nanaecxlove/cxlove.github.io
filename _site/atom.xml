@@ -4,7 +4,7 @@
  <title></title>
  <link href="/atom.xml" rel="self"/>
  <link href=""/>
- <updated>2014-05-20T15:41:20+08:00</updated>
+ <updated>2014-05-20T16:07:49+08:00</updated>
  <id></id>
  <author>
    <name></name>
@@ -13,11 +13,57 @@
 
  
  <entry>
-   <title>Jekyll Study Note</title>
-   <link href="/2014/05/20/Jekyll-study-note.html"/>
+   <title>Jekyll 学习笔记</title>
+   <link href="/development/2014/05/20/Jekyll-study-note.html"/>
    <updated>2014-05-20T00:00:00+08:00</updated>
-   <id>/2014/05/20/Jekyll-study-note</id>
+   <id>/development/2014/05/20/Jekyll-study-note</id>
    <content type="html">
+&lt;h1 id=&quot;windows-jekyll&quot;&gt;Windows 下配置Jekyll&lt;/h1&gt;
+&lt;p&gt;首先，很惭愧地作为一个Win狗，即使很乐意在Liunx下玩玩，但是始终还是愿意把一份工作在Win下也做一遍。&lt;/p&gt;
+
+&lt;p&gt;OS:Windows 7&lt;/p&gt;
+
+&lt;p&gt;Jekyll是用Ruby语言编写的，所以首先要配置好Ruby环境。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;步骤&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;安装Ruby：在windows下，使用rubyinstaller。&lt;/li&gt;
+  &lt;li&gt;安装Ruby DevKit。&lt;/li&gt;
+  &lt;li&gt;安装Jekyll。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;操作&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;下载rubyinstaller,&lt;a href=&quot;http://rubyinstaller.org/downloads/&quot;&gt;点击下载&lt;/a&gt;。我下的是&lt;code&gt;2.00-p481&lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;安装rubyinstaller,安装选项里所有都勾上。&lt;/li&gt;
+  &lt;li&gt;下载DevKit,&lt;a href=&quot;https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe&quot;&gt;点击下载&lt;/a&gt;。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;把下载的DevKit解压，在该目标下运行以下命令。&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;ruby dk.rb init
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;然后可以发现生成了一个config.xml的配置文件，文件里面是Ruby的安装目录。&lt;/p&gt;
+
+    &lt;p&gt;然后运行以下命令&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;ruby dk.rb install
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装jekyll，运行以下命令：&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;这样就完成了，你可以写一个简单页面，或者fork一个，然后在进	入到相应目录，运行以下命令：&lt;/li&gt;
+&lt;/ol&gt;
+
+ 		jekyll serve
+&lt;pre&gt;&lt;code&gt;然后通过浏览器访问`localhost:4000`就可以了。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;PS：很多人说直接在CMD里安装jekyll会有很多问题，但是似乎我没遇到过。不过也可以通过DevKit来安装。&lt;/p&gt;
 </content>
  </entry>
  

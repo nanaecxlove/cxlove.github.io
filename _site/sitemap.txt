@@ -8,5 +8,5 @@
 /sitemap.txt
 /tags.html
 
-/2014/05/20/Jekyll-study-note.html
+/development/2014/05/20/Jekyll-study-note.html
 /informal%20essay/2014/05/19/HelloWorld.html
