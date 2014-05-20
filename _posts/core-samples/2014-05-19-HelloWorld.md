@@ -1,9 +1,9 @@
 ---
 layout: post
-title : My First Blog
+title : cxlove's First Blog in GitHub
 description : My First Blog , Hello World
 category : informal essay
-tags : [Hello , First]
+tags : [HelloWorld]
 ---
 {% include JB/setup %}
 
