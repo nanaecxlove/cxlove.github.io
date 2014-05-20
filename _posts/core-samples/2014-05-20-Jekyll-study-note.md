@@ -14,6 +14,7 @@ tags : [HelloWorld]
 OS:Windows 7
 
 Jekyll是用Ruby语言编写的，所以首先要配置好Ruby环境。
+
 ##步骤
 1.  安装Ruby：在windows下，使用rubyinstaller。
 2.  安装Ruby DevKit。
@@ -38,6 +39,6 @@ Jekyll是用Ruby语言编写的，所以首先要配置好Ruby环境。
 
 6.  这样就完成了，你可以写一个简单页面，或者fork一个，然后在进	入到相应目录，运行以下命令：
 
- 		jekyll serve
+ 	`jekyll serve`
 
 	然后通过浏览器访问`localhost:4000`就可以了。
