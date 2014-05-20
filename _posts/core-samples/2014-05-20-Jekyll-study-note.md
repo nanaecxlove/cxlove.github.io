@@ -2,8 +2,8 @@
 layout: post
 title : Jekyll 学习笔记
 description : jekyll是一个简单的免费的Blog生成工具,可以免费部署在GitHub上。本文简单记录下自己配置环境，以及入门的过程。
-category : informal essay
-tags : [HelloWorld]
+category : Development
+tags : [Jekyll,study-note]
 ---
 {% include JB/setup %}
 
@@ -39,6 +39,6 @@ Jekyll是用Ruby语言编写的，所以首先要配置好Ruby环境。
 
 6.  这样就完成了，你可以写一个简单页面，或者fork一个，然后在进	入到相应目录，运行以下命令：
 
- 	`jekyll serve`
+ 		jekyll serve
 
-	然后通过浏览器访问`localhost:4000`就可以了。
+	然后通过浏览器访问localhost:4000就可以了。
