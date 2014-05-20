@@ -42,3 +42,5 @@ Jekyll是用Ruby语言编写的，所以首先要配置好Ruby环境。
  		jekyll serve
 
 	然后通过浏览器访问localhost:4000就可以了。
+
+PS：很多人说直接在CMD里安装jekyll会有很多问题，但是似乎我没遇到过。不过也可以通过DevKit来安装。
